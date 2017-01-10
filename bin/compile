@@ -198,7 +198,6 @@ echo "exporting config vars files from $ENV_DIR"
 if [ -d "$ENV_DIR" ]; then
   for e in $(ls $ENV_DIR); do
     export "$e=$(cat $ENV_DIR/$e)"
-    echo $AWS_KEY
     :
   done
 fi
