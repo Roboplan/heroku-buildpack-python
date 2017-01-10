@@ -202,6 +202,14 @@ if [ -d "$ENV_DIR" ]; then
   done
 fi
 
+echo "FFFFFFFFFFFFFFFFFFFF1"
+ls -a $BUILD_DIR
+echo "FFFFFFFFFFFFFFFFFFFF2"
+ls -a $BUILD_DIR/.fritzing/
+echo "FFFFFFFFFFFFFFFFFFFF3"
+ls -a $BUILD_DIR/.fritzing/parts/
+echo "FFFFFFFFFFFFFFFFFFFF4"
+ls -a $BUILD_DIR/.fritzing/parts/core
 export FRITZING_PARTS_DIR=$BUILD_DIR/$FRITZING_PARTS_DIR_SUFFIX
 echo "fritzing parts at $FRITZING_PARTS_DIR"
 
