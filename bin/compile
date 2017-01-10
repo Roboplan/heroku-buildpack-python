@@ -203,13 +203,11 @@ if [ -d "$ENV_DIR" ]; then
 fi
 
 echo "WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO1"
-ls ~/
-echo "WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO2"
-ls ~/.fritzing
+ls -a ~/
 echo "WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO3"
-ls "$BIN_DIR"
+ls -a "$BIN_DIR"
 echo "WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO4"
-ls "$BUILD_DIR"
+ls -a "$BUILD_DIR"
 
 # Run components bank
 componentsbank seed
