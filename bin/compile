@@ -193,6 +193,12 @@ source $BIN_DIR/steps/gdal
 # Install dependencies with Pip (where the magic happens).
 source $BIN_DIR/steps/pip-install
 
+# Run components bank
+componentsbank seed
+
+# Now uninstall
+/app/.heroku/python/bin/pip uninstall -r componentsBank
+
 # Support for pip install -e.
 rm -fr $BUILD_DIR/.heroku/src
 deep-cp /app/.heroku/src $BUILD_DIR/.heroku/src
