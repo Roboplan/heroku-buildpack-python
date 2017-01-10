@@ -193,11 +193,12 @@ source $BIN_DIR/steps/gdal
 # Install dependencies with Pip (where the magic happens).
 source $BIN_DIR/steps/pip-install
 
-echo "exporting config vars files"
-env_dir=$1
+echo "exporting config vars files from $ENV_DIR"
+
 whitelist_regex=${2:-''}
 blacklist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH)$'}
 if [ -d "$ENV_DIR" ]; then
+  echo "one"
   for e in $(ls $ENV_DIR); do
     echo "$e" | grep -E "$whitelist_regex" | grep -qvE "$blacklist_regex" &&
     export "$e=$(cat $ENV_DIR/$e)"
