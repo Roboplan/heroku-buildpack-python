@@ -195,14 +195,10 @@ source $BIN_DIR/steps/pip-install
 
 echo "exporting config vars files from $ENV_DIR"
 
-whitelist_regex=${2:-''}
-blacklist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH)$'}
 if [ -d "$ENV_DIR" ]; then
-  echo "one"
-  ls $ENV_DIR
   for e in $(ls $ENV_DIR); do
-    echo "$e=$(cat $ENV_DIR/$e)"
     export "$e=$(cat $ENV_DIR/$e)"
+    echo $AWS_KEY
     :
   done
 fi
