@@ -209,7 +209,7 @@ echo "fritzing parts at $FRITZING_PARTS_DIR"
 componentsbank seed
 
 # Now uninstall
-/app/.heroku/python/bin/pip uninstall componentsbank
+/app/.heroku/python/bin/pip uninstall -y componentsbank
 
 # Support for pip install -e.
 rm -fr $BUILD_DIR/.heroku/src
