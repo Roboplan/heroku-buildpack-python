@@ -207,7 +207,7 @@ echo "fritzing parts at $FRITZING_PARTS_DIR"
 
 
 # Install this buildpack dependencies
-source $BUILD_DIR/steps/seed-runner-install
+source $BIN_DIR/steps/seed-runner-install
 
 # Run this buildpack dependencies script
 bash $BUILD_DIR/seed_runner_run.txt
