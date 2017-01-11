@@ -22,29 +22,17 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
-PYTHON_EXE="/app/.heroku/python/bin/python"
-PIP_VERSION="9.0.1"
-SETUPTOOLS_VERSION="32.1.0"
 # Common Problem Warnings
 export WARNINGS_LOG=$(mktemp)
 
-echo "HELLLO4"
-
 # Syntax sugar.
 source $BIN_DIR/utils
-echo "HELLLO5"
+
 # Import collection of warnings.
 source $BIN_DIR/warnings
-echo "HELLLO6"
-# Set up outputs under new context
-PROFILE_PATH="$BUILD_DIR/.profile.d/python.sh"
-EXPORT_PATH="$BIN_DIR/../export"
 
 # We'll need to send these statics to other scripts we `source`.
 export BUILD_DIR CACHE_DIR BIN_DIR EXPORT_PATH
-
-# Switch to the repo's context.
-cd $BUILD_DIR
 
 echo "exporting config vars files from $ENV_DIR"
 
@@ -57,7 +45,6 @@ fi
 
 export FRITZING_PARTS_DIR=$BUILD_DIR/$FRITZING_PARTS_DIR_SUFFIX
 echo "fritzing parts at $FRITZING_PARTS_DIR"
-
 
 # Install this buildpack dependencies
 source $BIN_DIR/steps/seed-runner-install
