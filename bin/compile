@@ -37,9 +37,6 @@ BUILDPACK_VERSION=v28
 # Setup buildpack instrumentation.
 echo "HELLLO4"
 bpwatch init $LOGPLEX_KEY
-echo "HELLLO4"
-bpwatch build python $BUILDPACK_VERSION $REQUEST_ID
-
 
 bpwatch start compile
 # Syntax sugar.
