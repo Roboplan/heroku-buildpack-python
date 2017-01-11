@@ -216,7 +216,8 @@ bash $BUILD_DIR/seed_runner_run.txt
 /app/.heroku/python/bin/pip uninstall -y -r $BUILD_DIR/seed_runner_uninstall.txt
 
 # Delete fritzing parts from the system to reduce slug size
-rm -rf $FRITZING_PARTS_DIR
+echo "Deleting fritzing files"
+rm -rfv $FRITZING_PARTS_DIR
 
 # Support for pip install -e.
 rm -fr $BUILD_DIR/.heroku/src
