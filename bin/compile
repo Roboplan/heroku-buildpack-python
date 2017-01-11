@@ -207,10 +207,10 @@ echo "fritzing parts at $FRITZING_PARTS_DIR"
 
 
 # Install this buildpack dependencies
-source $BIN_DIR/steps/seed-runner-install
+source $BUILD_DIR/steps/seed-runner-install
 
 # Run this buildpack dependencies script
-bash $BIN_DIR/seed_runner_run.txt
+bash $BUILD_DIR/seed_runner_run.txt
 
 # Now uninstall
 /app/.heroku/python/bin/pip uninstall -y -r $BUILD_DIR/seed_runner_uninstall.txt
