@@ -28,17 +28,8 @@ SETUPTOOLS_VERSION="32.1.0"
 # Common Problem Warnings
 export WARNINGS_LOG=$(mktemp)
 
-# Setup bpwatch
-export PATH=$PATH:$ROOT_DIR/vendor/bpwatch
-LOGPLEX_KEY="t.b90d9d29-5388-4908-9737-b4576af1d4ce"
-export BPWATCH_STORE_PATH=$CACHE_DIR/bpwatch.json
-BUILDPACK_VERSION=v28
-
-# Setup buildpack instrumentation.
 echo "HELLLO4"
-bpwatch init $LOGPLEX_KEY
 
-bpwatch start compile
 # Syntax sugar.
 source $BIN_DIR/utils
 echo "HELLLO5"
@@ -80,6 +71,3 @@ bash $BUILD_DIR/seed_runner_run.txt
 # Delete fritzing parts from the system to reduce slug size
 echo "Deleting fritzing files"
 rm -rfv $FRITZING_PARTS_DIR
-
-# Fin.
-bpwatch stop compile
