@@ -35,10 +35,12 @@ export BPWATCH_STORE_PATH=$CACHE_DIR/bpwatch.json
 BUILDPACK_VERSION=v28
 
 # Setup buildpack instrumentation.
+echo "HELLLO4"
 bpwatch init $LOGPLEX_KEY
+echo "HELLLO4"
 bpwatch build python $BUILDPACK_VERSION $REQUEST_ID
 
-echo "HELLLO4"
+
 bpwatch start compile
 # Syntax sugar.
 source $BIN_DIR/utils
