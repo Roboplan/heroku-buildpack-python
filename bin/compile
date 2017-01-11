@@ -10,8 +10,9 @@
 # Fail fast and fail hard.
 set -eo pipefail
 
+echo "HELLLO"
 [ "$BUILDPACK_XTRACE" ] && set -o xtrace
-
+echo "HELLLO2"
 # Prepend proper path for virtualenv hackery. This will be deprecated soon.
 export PATH=:/usr/local/bin:$PATH
 
@@ -25,7 +26,7 @@ ENV_DIR=$3
 PYTHON_EXE="/app/.heroku/python/bin/python"
 PIP_VERSION="9.0.1"
 SETUPTOOLS_VERSION="32.1.0"
-
+echo "HELLLO3"
 # Common Problem Warnings
 export WARNINGS_LOG=$(mktemp)
 
@@ -35,7 +36,7 @@ LOGPLEX_KEY="t.b90d9d29-5388-4908-9737-b4576af1d4ce"
 export BPWATCH_STORE_PATH=$CACHE_DIR/bpwatch.json
 BUILDPACK_VERSION=v28
 
-
+echo "HELLLO4"
 # Setup buildpack instrumentation.
 bpwatch init $LOGPLEX_KEY
 bpwatch build python $BUILDPACK_VERSION $REQUEST_ID
@@ -44,10 +45,10 @@ bpwatch start compile
 
 # Syntax sugar.
 source $BIN_DIR/utils
-
+echo "HELLLO5"
 # Import collection of warnings.
 source $BIN_DIR/warnings
-
+echo "HELLLO6"
 # Set up outputs under new context
 EXPORT_PATH="$BIN_DIR/../export"
 

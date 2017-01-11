@@ -14,9 +14,10 @@
 
 BUILD_DIR=$1
 
+echo "HELLLOffff"
 # Exit early if the scripts are missing
-if [ ! -f $BUILD_DIR/seed_runner_install.txt ] && [ ! -f $BUILD_DIR/seed_runner_run ] && [ ! -f $BUILD_DIR/seed_runner_uninstall ]; then
+if [ ! -f $BUILD_DIR/seed_runner_install.txt ] && [ ! -f $BUILD_DIR/seed_runner_run.txt ] && [ ! -f $BUILD_DIR/seed_runner_uninstall.txt ]; then
   exit 1
 fi
-
+echo "HELLLOfsdfsdf"
 echo Python
