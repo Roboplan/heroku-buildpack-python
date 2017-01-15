@@ -19,6 +19,7 @@ export PATH=:/usr/local/bin:$PATH
 BIN_DIR=$(cd $(dirname $0); pwd) # absolute path
 ROOT_DIR=$(dirname $BIN_DIR)
 BUILD_DIR=$1
+SEED_RUNNER_DIR=$1/seed_runner
 CACHE_DIR=$2
 ENV_DIR=$3
 
@@ -50,10 +51,10 @@ echo "fritzing parts at $FRITZING_PARTS_DIR"
 source $BIN_DIR/steps/seed-runner-install
 
 # Run this buildpack dependencies script
-bash $BUILD_DIR/seed_runner_run.txt
+bash $SEED_RUNNER_DIR/run.sh
 
 # Now uninstall
-/app/.heroku/python/bin/pip uninstall -y -r $BUILD_DIR/seed_runner_uninstall.txt
+/app/.heroku/python/bin/pip uninstall -y -r $SEED_RUNNER_DIR/uninstall.txt
 
 # Delete fritzing parts from the system to reduce slug size
 echo "Deleting fritzing files"
