@@ -14,7 +14,8 @@ SEED_RUNNER_DIR=$1/seed_runner
 ENV_DIR=$3
 
 # We'll need to send these statics to other scripts we `source`.
-export BUILD_DIR BIN_DIR SEED_RUNNER_DIR
+FRITZING_PARTS_DIR="$BUILD_DIR/fritzing-parts"
+export BUILD_DIR BIN_DIR SEED_RUNNER_DIR FRITZING_PARTS_DIR
 
 echo "exporting config vars files from $ENV_DIR"
 
@@ -33,6 +34,7 @@ bash $SEED_RUNNER_DIR/run.sh
 
 # Now uninstall
 /app/.heroku/python/bin/pip uninstall -y -r $SEED_RUNNER_DIR/uninstall.txt
+rm -rfv $BUILD_DIR/fritzing-parts
 
 echo "-----> Done"
 
