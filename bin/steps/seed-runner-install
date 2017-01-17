@@ -1,3 +1,3 @@
 set +e
-/app/.heroku/python/bin/pip install -r $SEED_RUNNER_DIR/install.txt --exists-action=w --src=/app/.heroku/src --disable-pip-version-check --no-cache-dir 2>&1 | cleanup
+/app/.heroku/python/bin/pip install -r $SEED_RUNNER_DIR/install.txt --exists-action=w --src=/app/.heroku/src --disable-pip-version-check --no-cache-dir 2>&1
 set -e
