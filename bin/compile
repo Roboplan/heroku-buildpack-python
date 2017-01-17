@@ -7,33 +7,14 @@
 #
 #     $ bin/compile <build-dir> <cache-dir> <env-path>
 
-# Fail fast and fail hard.
-set -eo pipefail
-
-[ "$BUILDPACK_XTRACE" ] && set -o xtrace
-
-# Prepend proper path for virtualenv hackery. This will be deprecated soon.
-export PATH=:/usr/local/bin:$PATH
-
 # Paths.
 BIN_DIR=$(cd $(dirname $0); pwd) # absolute path
-ROOT_DIR=$(dirname $BIN_DIR)
 BUILD_DIR=$1
 SEED_RUNNER_DIR=$1/seed_runner
-CACHE_DIR=$2
 ENV_DIR=$3
 
-# Common Problem Warnings
-export WARNINGS_LOG=$(mktemp)
-
-# Syntax sugar.
-source $BIN_DIR/utils
-
-# Import collection of warnings.
-source $BIN_DIR/warnings
-
 # We'll need to send these statics to other scripts we `source`.
-export BUILD_DIR CACHE_DIR BIN_DIR EXPORT_PATH
+export BUILD_DIR BIN_DIR SEED_RUNNER_DIR
 
 echo "exporting config vars files from $ENV_DIR"
 
