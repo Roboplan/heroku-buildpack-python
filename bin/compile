@@ -51,7 +51,7 @@ source $BIN_DIR/steps/seed-runner-install
 bash $SEED_RUNNER_DIR/run.sh
 
 # Now uninstall
-#/app/.heroku/python/bin/pip uninstall -y -r $SEED_RUNNER_DIR/uninstall.txt
+/app/.heroku/python/bin/pip uninstall -y -r $SEED_RUNNER_DIR/uninstall.txt
 
 echo "-----> Done"
 
