@@ -27,7 +27,7 @@ if [ -d "$ENV_DIR" ]; then
 fi
 
 #Install uuidgen to generate uuid for each dyno
-apt-get install uuid-runtime
+sudo apt-get install uuid-runtime
 
 # Install this buildpack dependencies
 source $BIN_DIR/steps/seed-runner-install
